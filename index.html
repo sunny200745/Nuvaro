@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nuvaro - Professional web development, mobile app solutions, and corporate training to help your business grow digitally.">
+    <meta name="keywords" content="web development, mobile apps, corporate training, tech consulting, digital solutions">
+    <title>Nuvaro | Building Innovative Web & Mobile Experiences</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS (Minified for Production) -->
+    <link rel="stylesheet" href="style.min.css">
+    
+    <!-- Placeholder styling for contact form -->
+    <style>
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #8080a0 !important;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-icon">◈</span> Nuvaro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-primary ms-lg-3">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-elements">
+            <div class="hero-gradient"></div>
+            <!-- Circuit Board Background -->
+            <div class="circuit-bg">
+                <svg class="circuit-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <!-- Glow filter for nodes -->
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <!-- Animated gradient for traces -->
+                        <linearGradient id="traceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                            <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.8"/>
+                            <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Main circuit traces -->
+                    <g class="circuit-traces" stroke="url(#traceGradient)" stroke-width="2" fill="none">
+                        <!-- Horizontal main traces -->
+                        <path class="trace trace-1" d="M-50 200 L200 200 L250 250 L500 250 L550 200 L800 200 L850 250 L1100 250"/>
+                        <path class="trace trace-2" d="M-50 400 L150 400 L200 350 L450 350 L500 400 L750 400 L800 350 L1050 350 L1100 400 L1400 400"/>
+                        <path class="trace trace-3" d="M-50 600 L300 600 L350 550 L600 550 L650 600 L900 600 L950 650 L1200 650"/>
+                        <path class="trace trace-4" d="M500 100 L500 300 L550 350 L550 500"/>
+                        <path class="trace trace-5" d="M900 150 L900 350 L850 400 L850 550"/>
+                        <path class="trace trace-6" d="M1300 50 L1300 200 L1350 250 L1350 400 L1300 450 L1300 600"/>
+                        
+                        <!-- Right side traces -->
+                        <path class="trace trace-7" d="M1200 300 L1450 300 L1500 350 L1750 350 L1800 300 L1970 300"/>
+                        <path class="trace trace-8" d="M1100 500 L1350 500 L1400 550 L1650 550 L1700 500 L1970 500"/>
+                        <path class="trace trace-9" d="M1250 700 L1500 700 L1550 650 L1800 650 L1850 700 L1970 700"/>
+                        
+                        <!-- Vertical connectors -->
+                        <path class="trace trace-10" d="M1500 100 L1500 300"/>
+                        <path class="trace trace-11" d="M1700 200 L1700 450 L1750 500 L1750 700"/>
+                        <path class="trace trace-12" d="M200 500 L200 700 L250 750 L250 900"/>
+                        
+                        <!-- Diagonal traces -->
+                        <path class="trace trace-13" d="M100 800 L300 800 L400 700 L600 700"/>
+                        <path class="trace trace-14" d="M700 850 L900 850 L1000 750 L1200 750"/>
+                    </g>
+                    
+                    <!-- Circuit nodes (connection points) -->
+                    <g class="circuit-nodes" filter="url(#glow)">
+                        <!-- Main nodes -->
+                        <circle class="node node-pulse" cx="200" cy="200" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="500" cy="250" r="5" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="800" cy="200" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="150" cy="400" r="5" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="500" cy="400" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="750" cy="400" r="5" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="1100" cy="400" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="300" cy="600" r="5" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="650" cy="600" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="950" cy="650" r="5" fill="#0ea5e9"/>
+                        
+                        <!-- Right side nodes -->
+                        <circle class="node node-pulse" cx="1500" cy="350" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="1750" cy="350" r="5" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="1400" cy="550" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="1700" cy="500" r="5" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="1550" cy="650" r="6" fill="#06b6d4"/>
+                        <circle class="node" cx="1850" cy="700" r="5" fill="#0ea5e9"/>
+                        
+                        <!-- Vertical connector nodes -->
+                        <circle class="node" cx="500" cy="100" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="550" cy="500" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="900" cy="150" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="850" cy="550" r="4" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="1300" cy="50" r="5" fill="#06b6d4"/>
+                        <circle class="node" cx="1350" cy="400" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="1300" cy="600" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="1500" cy="100" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="1700" cy="200" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="1750" cy="700" r="4" fill="#0ea5e9"/>
+                        
+                        <!-- Additional nodes -->
+                        <circle class="node" cx="200" cy="700" r="4" fill="#0ea5e9"/>
+                        <circle class="node node-pulse" cx="250" cy="900" r="5" fill="#06b6d4"/>
+                        <circle class="node" cx="400" cy="700" r="4" fill="#0ea5e9"/>
+                        <circle class="node" cx="1000" cy="750" r="4" fill="#0ea5e9"/>
+                    </g>
+                    
+                    <!-- Animated data particles along traces -->
+                    <g class="data-particles">
+                        <circle class="particle particle-1" r="3" fill="#22d3ee">
+                            <animateMotion dur="4s" repeatCount="indefinite" path="M-50 200 L200 200 L250 250 L500 250 L550 200 L800 200 L850 250 L1100 250"/>
+                        </circle>
+                        <circle class="particle particle-2" r="3" fill="#22d3ee">
+                            <animateMotion dur="5s" repeatCount="indefinite" path="M-50 400 L150 400 L200 350 L450 350 L500 400 L750 400 L800 350 L1050 350 L1100 400 L1400 400"/>
+                        </circle>
+                        <circle class="particle particle-3" r="3" fill="#22d3ee">
+                            <animateMotion dur="4.5s" repeatCount="indefinite" path="M1200 300 L1450 300 L1500 350 L1750 350 L1800 300 L1970 300"/>
+                        </circle>
+                        <circle class="particle particle-4" r="3" fill="#22d3ee">
+                            <animateMotion dur="3.5s" repeatCount="indefinite" path="M1100 500 L1350 500 L1400 550 L1650 550 L1700 500 L1970 500"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Small decorative elements -->
+                    <g class="circuit-decorations" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.4">
+                        <rect x="400" y="180" width="20" height="20" rx="2"/>
+                        <rect x="420" y="180" width="20" height="20" rx="2"/>
+                        <rect x="1200" cy="380" width="15" height="15" rx="1"/>
+                        <rect x="1220" cy="380" width="15" height="15" rx="1"/>
+                        <rect x="1240" cy="380" width="15" height="15" rx="1"/>
+                        <!-- Arrow patterns -->
+                        <path d="M600 180 L610 190 L600 200 M615 180 L625 190 L615 200 M630 180 L640 190 L630 200"/>
+                        <path d="M1600 480 L1610 490 L1600 500 M1615 480 L1625 490 L1615 500 M1630 480 L1640 490 L1630 500"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8 col-xl-7">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                        Building Innovative<br>
+                        <span class="gradient-text">Web & Mobile</span><br>
+                        Experiences for Businesses
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Nuvaro provides professional web development, mobile app solutions, 
+                        and corporate training to help your business grow digitally.
+                    </p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#contact" class="btn btn-primary btn-lg">
+                            Schedule a Consultation
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#services" class="btn btn-outline-light btn-lg">
+                            Our Services
+                        </a>
+                    </div>
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#services">
+                <div class="mouse"></div>
+                <span>Scroll to explore</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-tag">What We Do</span>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">
+                    Comprehensive tech solutions tailored to accelerate your business growth
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(14, 165, 233, 0.35) 50%, rgba(6, 182, 212, 0.2) 100%); box-shadow: 0 8px 40px rgba(6, 182, 212, 0.3), inset 0 0 60px rgba(6, 182, 212, 0.1);">
+                                <div class="service-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);">
+                                    <i class="bi bi-code-slash"></i>
+                                </div>
+                                <h3>Web Development</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Web Development</h4>
+                                <p>Custom websites and web applications tailored to your business needs.</p>
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check2"></i> Custom Web Applications</li>
+                                    <li><i class="bi bi-check2"></i> E-commerce Solutions</li>
+                                    <li><i class="bi bi-check2"></i> API Development</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.25) 0%, rgba(139, 92, 246, 0.35) 50%, rgba(168, 85, 247, 0.2) 100%); box-shadow: 0 8px 40px rgba(168, 85, 247, 0.3), inset 0 0 60px rgba(168, 85, 247, 0.1);">
+                                <div class="service-icon" style="background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);">
+                                    <i class="bi bi-laptop"></i>
+                                </div>
+                                <h3>Website Building</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Website Building</h4>
+                                <p>Fast, modern, and responsive websites for startups and enterprises.</p>
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check2"></i> Responsive Design</li>
+                                    <li><i class="bi bi-check2"></i> SEO Optimization</li>
+                                    <li><i class="bi bi-check2"></i> Performance Focused</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.25) 0%, rgba(251, 146, 60, 0.35) 50%, rgba(249, 115, 22, 0.2) 100%); box-shadow: 0 8px 40px rgba(249, 115, 22, 0.3), inset 0 0 60px rgba(249, 115, 22, 0.1);">
+                                <div class="service-icon" style="background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <h3>Mobile App Development</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Mobile App Development</h4>
+                                <p>Cross-platform and native mobile apps for iOS and Android.</p>
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check2"></i> iOS & Android Development</li>
+                                    <li><i class="bi bi-check2"></i> Cross-Platform Solutions</li>
+                                    <li><i class="bi bi-check2"></i> App Store Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(52, 211, 153, 0.35) 50%, rgba(16, 185, 129, 0.2) 100%); box-shadow: 0 8px 40px rgba(16, 185, 129, 0.3), inset 0 0 60px rgba(16, 185, 129, 0.1);">
+                                <div class="service-icon" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">
+                                    <i class="bi bi-mortarboard"></i>
+                                </div>
+                                <h3>Corporate Trainings</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>Corporate Trainings</h4>
+                                <p>Technical workshops and training programs to upskill your teams.</p>
+                                <ul class="service-features">
+                                    <li><i class="bi bi-check2"></i> Technical Workshops</li>
+                                    <li><i class="bi bi-check2"></i> Team Skill Development</li>
+                                    <li><i class="bi bi-check2"></i> Custom Training Programs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image">
+                        <div class="image-wrapper">
+                            <div class="about-visual">
+                                <div class="visual-grid">
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                    <div class="grid-item"></div>
+                                </div>
+                                <div class="visual-circle"></div>
+                                <div class="visual-code">
+                                    <span>&lt;/&gt;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience-badge">
+                            <span class="years">5+</span>
+                            <span class="text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+                        <span class="section-tag">About Nuvaro</span>
+                        <h2 class="section-title">Delivering Top-Notch Tech Solutions</h2>
+                        <p class="lead">
+                            We are a passionate team of developers, designers, and strategists 
+                            dedicated to transforming businesses through innovative technology solutions.
+                        </p>
+                        <p>
+                            Our mission is to deliver top-notch tech solutions and consulting services 
+                            for businesses of all sizes. We believe in building lasting partnerships 
+                            and driving measurable results for our clients.
+                        </p>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="bi bi-gem"></i>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Professionalism</h4>
+                                    <p>Delivering excellence in every project</p>
+                                </div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Innovation</h4>
+                                    <p>Cutting-edge solutions for modern challenges</p>
+                                </div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="bi bi-trophy"></i>
+                                </div>
+                                <div class="value-content">
+                                    <h4>Client Success</h4>
+                                    <p>Your growth is our priority</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-tag">Our Approach</span>
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">
+                    A proven methodology that ensures project success from start to finish
+                </p>
+            </div>
+            <div class="process-timeline">
+                
+                <div class="circuit-line">
+                    <svg class="circuit-connector" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#975AF7;stop-opacity:0.3"/>
+                                <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#975AF7;stop-opacity:0.3"/>
+                            </linearGradient>
+                            <filter id="circuitGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <line class="circuit-path" x1="10%" y1="50%" x2="90%" y2="50%" stroke="url(#circuitGradient)" stroke-width="2" filter="url(#circuitGlow)"/>
+                    </svg>
+                </div>
+                <div class="row g-4 process-cards">
+                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="process-flip-card">
+                            <div class="circuit-node"></div>
+                            <div class="process-flip-inner">
+                                <div class="process-flip-front">
+                                    <div class="card-circuit">
+                                        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                                            <defs>
+                                                <filter id="cardGlow1" x="-50%" y="-50%" width="200%" height="200%">
+                                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                                </filter>
+                                                <linearGradient id="cardTraceGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.8"/>
+                                                    <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <g class="circuit-traces" stroke="url(#cardTraceGrad1)" stroke-width="1.5" fill="none">
+                                                <path class="trace trace-1" d="M0 30 L40 30 L50 40 L90 40"/>
+                                                <path class="trace trace-2" d="M0 170 L30 170 L40 160 L80 160"/>
+                                                <path class="trace trace-3" d="M200 50 L160 50 L150 60 L110 60"/>
+                                                <path class="trace trace-4" d="M200 150 L170 150 L160 140 L120 140"/>
+                                                <path class="trace trace-5" d="M30 0 L30 25"/>
+                                                <path class="trace trace-6" d="M170 200 L170 175"/>
+                                            </g>
+                                            <g class="circuit-nodes" filter="url(#cardGlow1)">
+                                                <circle class="node node-pulse" cx="40" cy="30" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="90" cy="40" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="160" cy="50" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="110" cy="60" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node" cx="30" cy="170" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="170" cy="150" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="30" cy="10" r="2" fill="#0ea5e9"/>
+                                                <circle class="node" cx="170" cy="190" r="2" fill="#0ea5e9"/>
+                                            </g>
+                                            <g class="data-particles">
+                                                <circle class="particle" r="2" fill="#22d3ee">
+                                                    <animateMotion dur="3s" repeatCount="indefinite" path="M0 30 L40 30 L50 40 L90 40"/>
+                                                </circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="step-icon">
+                                        <i class="bi bi-search"></i>
+                                    </div>
+                                    <h4>Discover</h4>
+                                </div>
+                                <div class="process-flip-back">
+                                    <h4>Discover</h4>
+                                    <p>Understanding your business goals, requirements, and challenges through in-depth research and analysis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="process-flip-card">
+                            <div class="circuit-node"></div>
+                            <div class="process-flip-inner">
+                                <div class="process-flip-front">
+                                    <div class="card-circuit">
+                                        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                                            <defs>
+                                                <filter id="cardGlow2" x="-50%" y="-50%" width="200%" height="200%">
+                                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                                </filter>
+                                                <linearGradient id="cardTraceGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.8"/>
+                                                    <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <g class="circuit-traces" stroke="url(#cardTraceGrad2)" stroke-width="1.5" fill="none">
+                                                <path class="trace trace-1" d="M0 40 L50 40 L60 30 L100 30"/>
+                                                <path class="trace trace-2" d="M0 160 L40 160 L50 170 L90 170"/>
+                                                <path class="trace trace-3" d="M200 40 L150 40 L140 50 L100 50"/>
+                                                <path class="trace trace-4" d="M200 160 L160 160 L150 150 L110 150"/>
+                                                <path class="trace trace-5" d="M60 0 L60 30"/>
+                                                <path class="trace trace-6" d="M140 200 L140 170"/>
+                                            </g>
+                                            <g class="circuit-nodes" filter="url(#cardGlow2)">
+                                                <circle class="node node-pulse" cx="50" cy="40" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="100" cy="30" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="150" cy="40" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="100" cy="50" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node" cx="40" cy="160" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="160" cy="160" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="60" cy="10" r="2" fill="#0ea5e9"/>
+                                                <circle class="node" cx="140" cy="190" r="2" fill="#0ea5e9"/>
+                                            </g>
+                                            <g class="data-particles">
+                                                <circle class="particle" r="2" fill="#22d3ee">
+                                                    <animateMotion dur="3.5s" repeatCount="indefinite" path="M200 40 L150 40 L140 50 L100 50"/>
+                                                </circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="step-icon">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </div>
+                                    <h4>Plan</h4>
+                                </div>
+                                <div class="process-flip-back">
+                                    <h4>Plan</h4>
+                                    <p>Creating detailed roadmaps and strategic solutions tailored to your specific needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="process-flip-card">
+                            <div class="circuit-node"></div>
+                            <div class="process-flip-inner">
+                                <div class="process-flip-front">
+                                    <div class="card-circuit">
+                                        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                                            <defs>
+                                                <filter id="cardGlow3" x="-50%" y="-50%" width="200%" height="200%">
+                                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                                </filter>
+                                                <linearGradient id="cardTraceGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.8"/>
+                                                    <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <g class="circuit-traces" stroke="url(#cardTraceGrad3)" stroke-width="1.5" fill="none">
+                                                <path class="trace trace-1" d="M0 35 L45 35 L55 45 L95 45"/>
+                                                <path class="trace trace-2" d="M0 165 L35 165 L45 155 L85 155"/>
+                                                <path class="trace trace-3" d="M200 35 L155 35 L145 45 L105 45"/>
+                                                <path class="trace trace-4" d="M200 165 L165 165 L155 175 L115 175"/>
+                                                <path class="trace trace-5" d="M45 0 L45 35"/>
+                                                <path class="trace trace-6" d="M155 200 L155 165"/>
+                                            </g>
+                                            <g class="circuit-nodes" filter="url(#cardGlow3)">
+                                                <circle class="node node-pulse" cx="45" cy="35" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="95" cy="45" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="155" cy="35" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="105" cy="45" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node" cx="35" cy="165" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="165" cy="165" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="45" cy="10" r="2" fill="#0ea5e9"/>
+                                                <circle class="node" cx="155" cy="190" r="2" fill="#0ea5e9"/>
+                                            </g>
+                                            <g class="data-particles">
+                                                <circle class="particle" r="2" fill="#22d3ee">
+                                                    <animateMotion dur="2.8s" repeatCount="indefinite" path="M0 35 L45 35 L55 45 L95 45"/>
+                                                </circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="step-icon">
+                                        <i class="bi bi-code-square"></i>
+                                    </div>
+                                    <h4>Build</h4>
+                                </div>
+                                <div class="process-flip-back">
+                                    <h4>Build</h4>
+                                    <p>Developing with best practices and cutting-edge technologies for optimal performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="process-flip-card">
+                            <div class="circuit-node"></div>
+                            <div class="process-flip-inner">
+                                <div class="process-flip-front">
+                                    <div class="card-circuit">
+                                        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                                            <defs>
+                                                <filter id="cardGlow4" x="-50%" y="-50%" width="200%" height="200%">
+                                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                                </filter>
+                                                <linearGradient id="cardTraceGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.8"/>
+                                                    <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <g class="circuit-traces" stroke="url(#cardTraceGrad4)" stroke-width="1.5" fill="none">
+                                                <path class="trace trace-1" d="M0 45 L55 45 L65 35 L105 35"/>
+                                                <path class="trace trace-2" d="M0 155 L45 155 L55 165 L95 165"/>
+                                                <path class="trace trace-3" d="M200 45 L145 45 L135 55 L95 55"/>
+                                                <path class="trace trace-4" d="M200 155 L155 155 L145 145 L105 145"/>
+                                                <path class="trace trace-5" d="M55 0 L55 45"/>
+                                                <path class="trace trace-6" d="M145 200 L145 155"/>
+                                            </g>
+                                            <g class="circuit-nodes" filter="url(#cardGlow4)">
+                                                <circle class="node node-pulse" cx="55" cy="45" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="105" cy="35" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="145" cy="45" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="95" cy="55" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node" cx="45" cy="155" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="155" cy="155" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="55" cy="10" r="2" fill="#0ea5e9"/>
+                                                <circle class="node" cx="145" cy="190" r="2" fill="#0ea5e9"/>
+                                            </g>
+                                            <g class="data-particles">
+                                                <circle class="particle" r="2" fill="#22d3ee">
+                                                    <animateMotion dur="3.2s" repeatCount="indefinite" path="M200 45 L145 45 L135 55 L95 55"/>
+                                                </circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="step-icon">
+                                        <i class="bi bi-rocket-takeoff"></i>
+                                    </div>
+                                    <h4>Launch</h4>
+                                </div>
+                                <div class="process-flip-back">
+                                    <h4>Launch</h4>
+                                    <p>Deploying your solution with thorough testing and optimization for success.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="process-flip-card">
+                            <div class="circuit-node"></div>
+                            <div class="process-flip-inner">
+                                <div class="process-flip-front">
+                                    <div class="card-circuit">
+                                        <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+                                            <defs>
+                                                <filter id="cardGlow5" x="-50%" y="-50%" width="200%" height="200%">
+                                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                                </filter>
+                                                <linearGradient id="cardTraceGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.8"/>
+                                                    <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.3"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <g class="circuit-traces" stroke="url(#cardTraceGrad5)" stroke-width="1.5" fill="none">
+                                                <path class="trace trace-1" d="M0 30 L50 30 L60 40 L100 40"/>
+                                                <path class="trace trace-2" d="M0 170 L40 170 L50 160 L90 160"/>
+                                                <path class="trace trace-3" d="M200 30 L150 30 L140 40 L100 40"/>
+                                                <path class="trace trace-4" d="M200 170 L160 170 L150 180 L110 180"/>
+                                                <path class="trace trace-5" d="M50 0 L50 30"/>
+                                                <path class="trace trace-6" d="M150 200 L150 170"/>
+                                            </g>
+                                            <g class="circuit-nodes" filter="url(#cardGlow5)">
+                                                <circle class="node node-pulse" cx="50" cy="30" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="100" cy="40" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="150" cy="30" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="100" cy="40" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node" cx="40" cy="170" r="2.5" fill="#0ea5e9"/>
+                                                <circle class="node node-pulse" cx="160" cy="170" r="3" fill="#06b6d4"/>
+                                                <circle class="node" cx="50" cy="10" r="2" fill="#0ea5e9"/>
+                                                <circle class="node" cx="150" cy="190" r="2" fill="#0ea5e9"/>
+                                            </g>
+                                            <g class="data-particles">
+                                                <circle class="particle" r="2" fill="#22d3ee">
+                                                    <animateMotion dur="3s" repeatCount="indefinite" path="M0 170 L40 170 L50 160 L90 160"/>
+                                                </circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="step-icon">
+                                        <i class="bi bi-headset"></i>
+                                    </div>
+                                    <h4>Support</h4>
+                                </div>
+                                <div class="process-flip-back">
+                                    <h4>Support</h4>
+                                    <p>Ongoing maintenance, updates, and dedicated support to ensure continued success.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <!-- <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-tag">Our Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    A showcase of our latest work and successful client partnerships
+                </p>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="project-visual visual-1">
+                                <div class="project-icon"><i class="bi bi-cart4"></i></div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <span class="project-category">E-commerce</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>ShopNex Platform</h4>
+                            <p>Full-stack e-commerce solution with 200% increase in online sales</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="project-visual visual-2">
+                                <div class="project-icon"><i class="bi bi-phone"></i></div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <span class="project-category">Mobile App</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>HealthTrack App</h4>
+                            <p>Fitness tracking app with 50K+ downloads and 4.8 star rating</p>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                                <span>REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="project-visual visual-3">
+                                <div class="project-icon"><i class="bi bi-building"></i></div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <span class="project-category">Enterprise</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>CorpConnect Portal</h4>
+                            <p>Enterprise management system serving 1000+ employees</p>
+                            <div class="tech-stack">
+                                <span>Angular</span>
+                                <span>.NET</span>
+                                <span>SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="project-visual visual-4">
+                                <div class="project-icon"><i class="bi bi-bank"></i></div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <span class="project-category">FinTech</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>PayFlow System</h4>
+                            <p>Secure payment processing platform handling $2M+ monthly</p>
+                            <div class="tech-stack">
+                                <span>Python</span>
+                                <span>Django</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="project-visual visual-5">
+                                <div class="project-icon"><i class="bi bi-people"></i></div>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <span class="project-category">SaaS</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>TeamSync Pro</h4>
+                            <p>Project management tool adopted by 100+ organizations</p>
+                            <div class="tech-stack">
+                                <span>Vue.js</span>
+                                <span>Laravel</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Trainings Section -->
+    <section id="portfolio" class="section testimonials-section">
+        <!-- <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">
+                    Don't just take our word for it — hear from our satisfied clients
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Nuvaro transformed our digital presence completely. Their professionalism 
+                            and technical expertise exceeded our expectations. The team delivered 
+                            on time and within budget."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>JD</span>
+                            </div>
+                            <div class="author-info">
+                                <h5>James Davidson</h5>
+                                <span>CEO, TechStart Inc.</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card featured">
+                        <div class="testimonial-quote">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The mobile app Nuvaro built for us has been a game-changer. User engagement 
+                            increased by 300% and our customer satisfaction scores are at an all-time high. 
+                            Highly recommended!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>SM</span>
+                            </div>
+                            <div class="author-info">
+                                <h5>Sarah Mitchell</h5>
+                                <span>Product Manager, HealthCorp</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Their corporate training program upskilled our entire development team. 
+                            The workshops were practical, engaging, and immediately applicable. 
+                            Worth every investment."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>RK</span>
+                            </div>
+                            <div class="author-info">
+                                <h5>Robert Kim</h5>
+                                <span>CTO, Enterprise Solutions</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    
+        <div class="container">
+            
+
+            <div class="section-header text-center" data-aos="fade-up">
+                <span class="section-tag">Trainings Portfolio</span>
+                <h2 class="section-title">Delivered to various organizations</h2>
+                <p class="section-subtitle">
+                    Don't just take our word for it — hear from our satisfied clients
+                </p>
+            </div>
+            <div class="tab-content gallery mt-5">
+                <div class="tab-pane active" id="web-development">
+                    <div class="ml-auto mr-auto">
+                        <div class="row">
+
+
+                            <div class="col-md-6 cc-porfolio-image img-raised aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <a target="_blank" href="https://prezi.com/x0mtkxmms_r4/angularjs/">
+                                    <figure class="cc-effect"><img src="images/project-1.jpg" alt="Image">
+                                        <figcaption>
+                                            <div class="h4">Workshop on Angular JS </div>
+                                            <p>Hands on Workshop on AngularJS with Mordern Tools aka Grunt, Bower &amp; Yeoman, available on Prezi.com </p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="col-md-6 cc-porfolio-image img-raised aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <a target="_blank" href="https://prezi.com/_fcvrgskj7jg/angular-2/">
+                                    <figure class="cc-effect"><img src="images/project-2.jpg" alt="Image">
+                                        <figcaption>
+                                            <div class="h4">Angular 2 </div>
+                                            <p>Overview of Angular 2 . The component driven Framework</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-content gallery mt-5">
+                <div class="tab-pane active">
+                    <div class="ml-auto mr-auto">
+                        <div class="row">
+
+                            <div class="col-md-6 cc-porfolio-image img-raised aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <a target="_blank" href="https://sunny200745.github.io/Training-FrameworksVsLibrary/">
+                                    <figure class="cc-effect"><img src="images/graphic-design-3.jpg" alt="Image">
+                                        <figcaption>
+                                            <div class="h4">Decision Making : Framework VS Library</div>
+                                            <p>Tradeoffs to decide whether to choose what at times : Framework or Library</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="col-md-6 cc-porfolio-image img-raised aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <a target="_blank" href="https://sunny200745.github.io/Training-BasicJS">
+                                    <figure class="cc-effect"><img src="images/graphic-design-4.jpg" alt="Image">
+                                        <figcaption>
+                                            <div class="h4">Understanding Basics of Javascript</div>
+                                            <p>Basics of Javascript, helps you to deep dive into the extensive world of Javascript</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-content gallery mt-5">
+                <div class="tab-pane active">
+                    <div class="ml-auto mr-auto">
+                        <div class="row">
+
+                            <div class="col-md-6 cc-porfolio-image img-raised aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <a target="_blank" href="https://sunny200745.github.io/Training-Jquery">
+                                    <figure class="cc-effect"><img src="images/graphic-design-1.jpg" alt="Image">
+                                        <figcaption>
+                                            <div class="h4">Basics of Jquery </div>
+                                            <p>Understanding of Jquery , showcasing basics of Jquery </p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <!-- <div class="col-md-6 cc-porfolio-image img-raised aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <a target="_blank" href="https://sunny200745.github.io/Training-BasicJS">
+                                    <figure class="cc-effect"><img src="images/graphic-design-3.jpg" alt="Image">
+                                        <figcaption>
+                                            <div class="h4">Modern Workflow Tools for FE</div>
+                                            <p>Understanding of the tools which helps us to setup and perform tasks of front end projects with ease</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <span class="section-tag">Get in Touch</span>
+                        <h2 class="section-title">Let's Build Something Great Together</h2>
+                        <p class="contact-description">
+                            Ready to start your next project? Contact us today and let's discuss 
+                            how we can help transform your business with innovative tech solutions.
+                        </p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Email Us</span>
+                                    <a href="mailto:sunny.200745@gmail.com">sunny.200745@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Call Us</span>
+                                    <a href="tel:+17788839278">+1-778-883-9278</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Location</span>
+                                    <span>Vancouver, Canada</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-header">
+                                <h3>Schedule a Consultation</h3>
+                                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name *" required style="background-color: #242430; color: #f0f0f8; border-color: #3a3a50;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="company" name="company" placeholder="Company *" required style="background-color: #242430; color: #f0f0f8; border-color: #3a3a50;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email *" required style="background-color: #242430; color: #f0f0f8; border-color: #3a3a50;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" style="background-color: #242430; color: #f0f0f8; border-color: #3a3a50;">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" id="projectBrief" name="projectBrief" placeholder="Project Brief *" style="height: 150px; background-color: #242430; color: #f0f0f8; border-color: #3a3a50;" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100" id="submitBtn">
+                                        <span class="btn-text">Send Message</span>
+                                        <span class="btn-loading d-none">
+                                            <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                            Sending...
+                                        </span>
+                                        <i class="bi bi-send ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="footer-brand">
+                            <a href="#" class="brand-logo">
+                                <span class="brand-icon">◈</span> Nuvaro
+                            </a>
+                            <p>
+                                Building innovative web and mobile experiences for businesses. 
+                                Your trusted partner for digital transformation and tech solutions.
+                            </p>
+                            <!-- <div class="social-links">
+                                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <div class="footer-links">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#portfolio">Portfolio</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="footer-links">
+                            <h5>Services</h5>
+                            <ul>
+                                <li><a href="#services">Web Development</a></li>
+                                <li><a href="#services">Website Building</a></li>
+                                <li><a href="#services">Mobile App Development</a></li>
+                                <li><a href="#services">Corporate Training</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="footer-contact">
+                            <h5>Contact Info</h5>
+                            <ul>
+                                <li>
+                                    <i class="bi bi-envelope"></i>
+                                    <a href="mailto:sunny.200745@gmail.com">sunny.200745@gmail.com</a>
+                                </li>
+                                <li>
+                                    <i class="bi bi-telephone"></i>
+                                    <a href="tel:+17788839278">+1-778-883-9278</a>
+                                </li>
+                                <li>
+                                    <i class="bi bi-geo-alt"></i>
+                                    <span>Vancouver, Canada</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            &copy; 2026 Nuvaro. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="tagline">
+                            Building the future, one line of code at a time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Custom JS (Minified for Production) -->
+    <script src="script.min.js"></script>
+</body>
+</html>
