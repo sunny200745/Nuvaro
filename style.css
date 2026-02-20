@@ -179,6 +179,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
 }
 
+.navbar-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .nav-link {
     font-family: var(--font-display);
     font-weight: 500;
@@ -1793,15 +1801,23 @@ textarea.form-control {
     border-bottom: 1px solid var(--border-color);
 }
 
-.footer-brand .brand-logo {
+.footer-brand .footer-logo-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-family: var(--font-display);
     font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.footer-logo {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 16px;
+    margin-bottom: 5px;
 }
 
 .footer-brand .brand-icon {

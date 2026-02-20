@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Layered Diamond Logo - Transparent Background -->
+  
+  <!-- Outer diamond outline -->
+  <rect x="15" y="15" width="70" height="70" rx="8" ry="8" 
+        transform="rotate(45 50 50)" 
+        fill="none" 
+        stroke="#818cf8" 
+        stroke-width="4"/>
+  
+  <!-- Middle diamond (dark purple) -->
+  <rect x="22" y="22" width="56" height="56" rx="6" ry="6" 
+        transform="rotate(45 50 50)" 
+        fill="#4338ca"/>
+  
+  <!-- Inner diamond (lighter purple) -->
+  <rect x="30" y="30" width="40" height="40" rx="4" ry="4" 
+        transform="rotate(45 50 50)" 
+        fill="#818cf8"/>
+</svg>
