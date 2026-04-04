@@ -1,0 +1,41 @@
+---
+description: Git push workflow for Nuvaro repository - triggers on "Push Code" command
+alwaysApply: true
+---
+
+# Push Code Workflow
+
+When the user says **"Push Code"** or **"push code"** or **"push to repo"**, follow this workflow:
+
+## Step 1: Check for Changes
+Run `git status` to see what files have been modified, added, or deleted.
+
+```bash
+cd /Users/sunny/Desktop/Sunny/Projects/Personal_Github/Websites/Nuvaro && git status
+```
+
+## Step 2: Minify CSS (if style.css changed)
+If `style.css` was modified, minify it:
+
+```bash
+cat style.css | tr -d '\n' | sed 's/  */ /g' | sed 's/ *{ */{/g' | sed 's/ *} */}/g' | sed 's/ *: */:/g' | sed 's/ *; */;/g' | sed 's/;}/}/g' > style.min.css
+```
+
+## Step 3: Ask for Commit Message
+Use AskQuestion tool to get the commit message from the user:
+
+```
+"What commit message would you like to use?"
+```
+
+## Step 4: Stage, Commit, and Push
+Run the git commands:
+
+```bash
+cd /Users/sunny/Desktop/Sunny/Projects/Personal_Github/Websites/Nuvaro && git add . && git commit -m "COMMIT_MESSAGE" && git push origin main
+```
+
+## Repository Details
+- **Remote**: https://github.com/sunny200745/Nuvaro.git
+- **Branch**: main
+- **Local Path**: /Users/sunny/Desktop/Sunny/Projects/Personal_Github/Websites/Nuvaro
