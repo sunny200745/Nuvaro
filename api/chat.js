@@ -52,33 +52,35 @@ export default async function handler(req, res) {
   }
 
   try {
-    const anthropicRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
+    const openRouterRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
         'HTTP-Referer': 'https://nuvaro.ca',
-        },
-        body: JSON.stringify({
+        'X-Title': 'Aria - Nuvaro Assistant',
+      },
+      body: JSON.stringify({
         model: 'anthropic/claude-3-haiku',
         max_tokens: 1024,
+        stream: true,
         messages: [
-            { role: 'system', content: SYSTEM_PROMPT },
-            ...messages
+          { role: 'system', content: SYSTEM_PROMPT },
+          ...messages,
         ],
-        }),
+      }),
     });
 
-    if (!anthropicRes.ok) {
-      const err = await anthropicRes.json();
-      return res.status(anthropicRes.status).json({ error: err });
+    if (!openRouterRes.ok) {
+      const err = await openRouterRes.json();
+      return res.status(openRouterRes.status).json({ error: err });
     }
 
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
 
-    const reader = anthropicRes.body.getReader();
+    const reader = openRouterRes.body.getReader();
     const decoder = new TextDecoder();
     let fullText = '';
 
@@ -96,19 +98,20 @@ export default async function handler(req, res) {
 
           try {
             const parsed = JSON.parse(data);
-            if (parsed.choices?.[0]?.delta?.content) {
-                const text = parsed.choices[0].delta.content;
-                if (!text.includes('LEAD_CAPTURE::')) {
-                    res.write(`data: ${JSON.stringify({ text })}\n\n`);
-                }
-                fullText += text;
+            const text = parsed.choices?.[0]?.delta?.content;
+
+            if (text) {
+              fullText += text;
+              if (!text.includes('LEAD_CAPTURE::')) {
+                res.write(`data: ${JSON.stringify({ text })}\n\n`);
+              }
             }
           } catch {}
         }
       }
     }
 
-    // Detect lead capture in the full response
+    // Detect and email lead if captured
     const leadMatch = fullText.match(/LEAD_CAPTURE::(\{.*?\})/);
     if (leadMatch) {
       try {
@@ -130,11 +133,9 @@ export default async function handler(req, res) {
 }
 
 async function sendLeadEmail(lead) {
-  // Using Resend — free tier, 100 emails/day, no SMTP setup needed
-  // Sign up at resend.com and add RESEND_API_KEY to Vercel env vars
   const resendKey = process.env.RESEND_API_KEY;
   if (!resendKey) {
-    console.log('No RESEND_API_KEY — lead data:', lead);
+    console.log('No RESEND_API_KEY — lead:', lead);
     return;
   }
 
