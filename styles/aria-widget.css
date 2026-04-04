@@ -2,35 +2,38 @@
     position: fixed;
     bottom: 28px;
     right: 28px;
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background: #0f0f0f;
-    border: 1.5px solid #333;
+    background: transparent;
+    border: 1px solid #8B5CF6;
     cursor: pointer;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
   }
   #aria-bubble:hover {
-    transform: scale(1.06);
-    border-color: #555;
+    transform: scale(1.08);
+    box-shadow: 0 6px 28px rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.1);
   }
   #aria-bubble svg {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
+    color: #8B5CF6;
   }
   #aria-panel {
     position: fixed;
-    bottom: 92px;
+    bottom: 102px;
     right: 28px;
-    width: 360px;
-    height: 520px;
+    width: 380px;
+    height: 540px;
     background: #0a0a0a;
-    border: 1px solid #222;
-    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     z-index: 9998;
@@ -39,6 +42,7 @@
     pointer-events: none;
     transform: translateY(12px);
     transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.08);
   }
   #aria-panel.open {
     opacity: 1;
@@ -46,46 +50,46 @@
     transform: translateY(0);
   }
   #aria-header {
-    padding: 14px 16px;
-    border-bottom: 1px solid #1a1a1a;
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     flex-shrink: 0;
   }
   #aria-avatar {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
-    color: #888;
+    color: #8B5CF6;
     letter-spacing: 0.02em;
   }
   #aria-header-text {
     flex: 1;
   }
   #aria-header-name {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
-    color: #e8e8e8;
+    color: #f0f0f0;
     line-height: 1.3;
   }
   #aria-header-status {
-    font-size: 11px;
-    color: #555;
+    font-size: 13px;
+    color: #888;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
   }
   #aria-header-status span {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: #2ecc71;
     display: inline-block;
@@ -94,87 +98,89 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #444;
-    padding: 4px;
+    color: #666;
+    padding: 6px;
     display: flex;
     align-items: center;
     transition: color 0.15s;
   }
-  #aria-close:hover { color: #888; }
+  #aria-close:hover { color: #8B5CF6; }
+  #aria-close svg { width: 20px; height: 20px; }
   #aria-messages {
     flex: 1;
     overflow-y: auto;
-    padding: 16px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     scroll-behavior: smooth;
   }
-  #aria-messages::-webkit-scrollbar { width: 3px; }
+  #aria-messages::-webkit-scrollbar { width: 4px; }
   #aria-messages::-webkit-scrollbar-track { background: transparent; }
-  #aria-messages::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+  #aria-messages::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.3); border-radius: 4px; }
   .aria-msg {
-    max-width: 82%;
-    font-size: 13px;
-    line-height: 1.6;
-    padding: 10px 13px;
-    border-radius: 12px;
+    max-width: 85%;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 12px 16px;
+    border-radius: 14px;
     word-wrap: break-word;
     white-space: pre-wrap;
   }
   .aria-msg.aria {
     background: #141414;
-    border: 1px solid #1e1e1e;
-    color: #ccc;
+    border: 1px solid #8B5CF6;
+    color: #d0d0d0;
     align-self: flex-start;
     border-bottom-left-radius: 4px;
   }
   .aria-msg.user {
-    background: #1c1c1c;
-    border: 1px solid #2a2a2a;
-    color: #e8e8e8;
+    background: #1a1a1a;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    color: #f0f0f0;
     align-self: flex-end;
     border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.05);
   }
   .aria-typing {
     display: flex;
-    gap: 4px;
+    gap: 5px;
     align-items: center;
-    padding: 10px 13px;
+    padding: 12px 16px;
     background: #141414;
-    border: 1px solid #1e1e1e;
-    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 14px;
     border-bottom-left-radius: 4px;
     align-self: flex-start;
   }
   .aria-typing span {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: #444;
+    background: #8B5CF6;
     animation: aria-bounce 1.2s infinite;
   }
   .aria-typing span:nth-child(2) { animation-delay: 0.2s; }
   .aria-typing span:nth-child(3) { animation-delay: 0.4s; }
   @keyframes aria-bounce {
-    0%, 60%, 100% { transform: translateY(0); background: #444; }
-    30% { transform: translateY(-4px); background: #666; }
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-5px); opacity: 1; }
   }
   #aria-footer {
-    padding: 12px;
-    border-top: 1px solid #1a1a1a;
+    padding: 14px;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
     display: flex;
-    gap: 8px;
+    gap: 10px;
     align-items: flex-end;
     flex-shrink: 0;
   }
   #aria-input {
     flex: 1;
     background: #111;
-    border: 1px solid #222;
-    border-radius: 10px;
-    padding: 9px 12px;
-    font-size: 13px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 15px;
     color: #e0e0e0;
     resize: none;
     outline: none;
@@ -183,14 +189,14 @@
     line-height: 1.5;
     transition: border-color 0.15s;
   }
-  #aria-input::placeholder { color: #3a3a3a; }
-  #aria-input:focus { border-color: #333; }
+  #aria-input::placeholder { color: #555; }
+  #aria-input:focus { border-color: #8B5CF6; }
   #aria-send {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(139, 92, 246, 0.3);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -198,16 +204,20 @@
     flex-shrink: 0;
     transition: background 0.15s, border-color 0.15s;
   }
-  #aria-send:hover { background: #222; border-color: #333; }
-  #aria-send svg { width: 15px; height: 15px; }
+  #aria-send:hover { background: rgba(139, 92, 246, 0.15); border-color: #8B5CF6; }
+  #aria-send svg { width: 18px; height: 18px; color: #8B5CF6; }
   #aria-branding {
     text-align: center;
-    font-size: 10px;
-    color: #2a2a2a;
-    padding: 6px 0 10px;
+    font-size: 11px;
+    color: #444;
+    padding: 8px 0 12px;
     flex-shrink: 0;
   }
   @media (max-width: 420px) {
-    #aria-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
-    #aria-bubble { right: 12px; bottom: 16px; }
+    #aria-panel { width: calc(100vw - 24px); right: 12px; bottom: 100px; height: 480px; }
+    #aria-bubble { right: 16px; bottom: 20px; width: 56px; height: 56px; }
+    #aria-bubble svg { width: 24px; height: 24px; color: #8B5CF6; }
+    .aria-msg { font-size: 15px; padding: 10px 14px; }
+    #aria-input { font-size: 14px; padding: 10px 12px; }
+    #aria-header-name { font-size: 15px; }
   }
