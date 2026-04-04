@@ -15,10 +15,10 @@ cd /Users/sunny/Desktop/Sunny/Projects/Personal_Github/Websites/Nuvaro && git st
 ```
 
 ## Step 2: Minify CSS (if style.css changed)
-If `style.css` was modified, minify it:
+If `styles/style.css` was modified, minify it:
 
 ```bash
-cat style.css | tr -d '\n' | sed 's/  */ /g' | sed 's/ *{ */{/g' | sed 's/ *} */}/g' | sed 's/ *: */:/g' | sed 's/ *; */;/g' | sed 's/;}/}/g' > style.min.css
+cat styles/style.css | tr -d '\n' | sed 's/  */ /g' | sed 's/ *{ */{/g' | sed 's/ *} */}/g' | sed 's/ *: */:/g' | sed 's/ *; */;/g' | sed 's/;}/}/g' > styles/style.min.css
 ```
 
 ## Step 3: Ask for Commit Message

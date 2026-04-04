@@ -1,0 +1,213 @@
+#aria-bubble {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #0f0f0f;
+    border: 1.5px solid #333;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  #aria-bubble:hover {
+    transform: scale(1.06);
+    border-color: #555;
+  }
+  #aria-bubble svg {
+    width: 22px;
+    height: 22px;
+  }
+  #aria-panel {
+    position: fixed;
+    bottom: 92px;
+    right: 28px;
+    width: 360px;
+    height: 520px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9998;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  #aria-panel.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+  #aria-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  #aria-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.02em;
+  }
+  #aria-header-text {
+    flex: 1;
+  }
+  #aria-header-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e8e8e8;
+    line-height: 1.3;
+  }
+  #aria-header-status {
+    font-size: 11px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  #aria-header-status span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2ecc71;
+    display: inline-block;
+  }
+  #aria-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #444;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+  }
+  #aria-close:hover { color: #888; }
+  #aria-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scroll-behavior: smooth;
+  }
+  #aria-messages::-webkit-scrollbar { width: 3px; }
+  #aria-messages::-webkit-scrollbar-track { background: transparent; }
+  #aria-messages::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+  .aria-msg {
+    max-width: 82%;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 10px 13px;
+    border-radius: 12px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  .aria-msg.aria {
+    background: #141414;
+    border: 1px solid #1e1e1e;
+    color: #ccc;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+  .aria-msg.user {
+    background: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    color: #e8e8e8;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+  .aria-typing {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 10px 13px;
+    background: #141414;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+  }
+  .aria-typing span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #444;
+    animation: aria-bounce 1.2s infinite;
+  }
+  .aria-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .aria-typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes aria-bounce {
+    0%, 60%, 100% { transform: translateY(0); background: #444; }
+    30% { transform: translateY(-4px); background: #666; }
+  }
+  #aria-footer {
+    padding: 12px;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+  #aria-input {
+    flex: 1;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-size: 13px;
+    color: #e0e0e0;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+    max-height: 100px;
+    line-height: 1.5;
+    transition: border-color 0.15s;
+  }
+  #aria-input::placeholder { color: #3a3a3a; }
+  #aria-input:focus { border-color: #333; }
+  #aria-send {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  #aria-send:hover { background: #222; border-color: #333; }
+  #aria-send svg { width: 15px; height: 15px; }
+  #aria-branding {
+    text-align: center;
+    font-size: 10px;
+    color: #2a2a2a;
+    padding: 6px 0 10px;
+    flex-shrink: 0;
+  }
+  @media (max-width: 420px) {
+    #aria-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
+    #aria-bubble { right: 12px; bottom: 16px; }
+  }
