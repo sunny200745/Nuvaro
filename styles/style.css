@@ -1299,7 +1299,7 @@ h1, h2, h3, h4, h5, h6 {
    Contact Section
    ============================================ */
 .contact-section {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(90deg, #3b2872 0%, #59377e 25%, #b56476 60%, #f07a65 100%);
 }
 
 .contact-section .section-tag {
@@ -1428,17 +1428,17 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-md);
-    color: var(--text-secondary);
+    color: #333;
     font-size: 1.125rem;
     transition: all var(--transition-base);
 }
 
 .social-links a:hover {
-    background: var(--accent-primary);
-    border-color: var(--accent-primary);
+    background: #0d0b2d;
+    border-color: #0d0b2d;
     color: white;
     transform: translateY(-2px);
 }
