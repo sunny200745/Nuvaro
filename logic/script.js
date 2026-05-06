@@ -15,7 +15,93 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize mobile touch support for expertise cards
     initMobileExpertiseCards();
+
+    initProcessRail();
+
+    initTechStackItems();
 });
+
+// ============================================
+// How We Work — interactive step rail
+// ============================================
+function initProcessRail() {
+    const rail = document.querySelector('[data-process-rail]');
+    if (!rail) return;
+
+    const cards = rail.querySelectorAll('.process-step-card--bold');
+    const n = cards.length;
+    if (!n) return;
+
+    function setActive(index) {
+        const clamped = Math.max(0, Math.min(n - 1, index));
+        cards.forEach((c, i) => {
+            const on = i === clamped;
+            c.classList.toggle('is-active', on);
+            if (on) {
+                c.setAttribute('aria-current', 'step');
+            } else {
+                c.removeAttribute('aria-current');
+            }
+        });
+        const progress = n <= 1 ? 1 : clamped / (n - 1);
+        rail.style.setProperty('--progress', String(progress));
+    }
+
+    cards.forEach((card, i) => {
+        card.addEventListener('click', () => setActive(i));
+
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setActive(i);
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                const next = Math.min(i + 1, n - 1);
+                setActive(next);
+                cards[next].focus();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prev = Math.max(i - 1, 0);
+                setActive(prev);
+                cards[prev].focus();
+            }
+        });
+    });
+
+    setActive(0);
+}
+
+// ============================================
+// Tech stack — pick a tool per category (tap / keyboard)
+// ============================================
+function initTechStackItems() {
+    const root = document.querySelector('.tech-stack-section--revamp');
+    if (!root) return;
+
+    root.querySelectorAll('.tech-logos').forEach((logos) => {
+        logos.querySelectorAll('.tech-item').forEach((item) => {
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            item.setAttribute('aria-pressed', 'false');
+
+            item.addEventListener('click', () => {
+                logos.querySelectorAll('.tech-item').forEach((el) => {
+                    el.classList.remove('is-active');
+                    el.setAttribute('aria-pressed', 'false');
+                });
+                item.classList.add('is-active');
+                item.setAttribute('aria-pressed', 'true');
+            });
+
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
+        });
+    });
+}
 
 // ============================================
 // Mobile Touch Support for Flip Cards
@@ -492,45 +578,6 @@ function typeWriter(element, text, speed = 50) {
     
     type();
 }
-
-// Counter Animation
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.textContent);
-        const suffix = counter.textContent.replace(/[0-9]/g, '');
-        let current = 0;
-        const increment = target / 50;
-        const duration = 2000;
-        const stepTime = duration / 50;
-        
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                counter.textContent = Math.ceil(current) + suffix;
-                setTimeout(updateCounter, stepTime);
-            } else {
-                counter.textContent = target + suffix;
-            }
-        };
-        
-        // Start animation when element is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    updateCounter();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(counter);
-    });
-}
-
-// Initialize counter animation
-document.addEventListener('DOMContentLoaded', animateCounters);
 
 // Console Easter Egg
 console.log('%c🚀 Nuvaro', 'font-size: 24px; font-weight: bold; color: #6366f1;');
