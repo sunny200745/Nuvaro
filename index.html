@@ -26,6 +26,8 @@
     
     <!-- Custom CSS (Minified for Production) -->
     <link rel="stylesheet" href="styles/style.min.css">
+    <link rel="stylesheet" href="styles/nuvaro-v2.min.css">
+    <link rel="stylesheet" href="styles/aria-widget.min.css">
     
     <!-- Placeholder styling for contact form -->
     <style>
@@ -40,7 +42,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#home">
                 <img src="images/logo.svg" alt="Nuvaro" class="brand-logo" style="width: 250px; height: auto;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,28 +54,39 @@
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#showcase">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#capabilities">Capabilities</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#aria">Aria</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
-                <a href="#contact" class="btn btn-primary ms-lg-3" style="white-space: nowrap; padding: 8px 16px; font-size: 0.85rem;">Get in Touch</a>
+                <a href="#contact" class="btn btn-primary ms-lg-3" style="white-space: nowrap; padding: 8px 16px; font-size: 0.85rem;">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-bg-elements">
+    <section id="home" class="hero-section hero-section--revamp">
+        <div class="hero-bg-elements" aria-hidden="true">
+            <div class="hero-bg-wash"></div>
+            <div class="hero-bg-grid"></div>
+            <div class="hero-aurora">
+                <span class="hero-aurora__blob hero-aurora__blob--1"></span>
+                <span class="hero-aurora__blob hero-aurora__blob--2"></span>
+                <span class="hero-aurora__blob hero-aurora__blob--3"></span>
+            </div>
             <div class="hero-gradient"></div>
-            <!-- Circuit Board Background -->
+            <div class="hero-shimmer" aria-hidden="true"></div>
+            <!-- Light decorative lines (static, low contrast) -->
             <div class="circuit-bg">
                 <svg class="circuit-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
                     <defs>
@@ -159,29 +172,13 @@
                         <circle class="node" cx="1000" cy="750" r="3" fill="#59377e"/>
                     </g>
                     
-                    <!-- Animated data particles along traces - Nuvaro Coral -->
-                    <g class="data-particles">
-                        <circle class="particle particle-1" r="2.5" fill="#f07a65">
-                            <animateMotion dur="4s" repeatCount="indefinite" path="M-50 200 L200 200 L250 250 L500 250 L550 200 L800 200 L850 250 L1100 250"/>
-                        </circle>
-                        <circle class="particle particle-2" r="2.5" fill="#f07a65">
-                            <animateMotion dur="5s" repeatCount="indefinite" path="M-50 400 L150 400 L200 350 L450 350 L500 400 L750 400 L800 350 L1050 350 L1100 400 L1400 400"/>
-                        </circle>
-                        <circle class="particle particle-3" r="2.5" fill="#f07a65">
-                            <animateMotion dur="4.5s" repeatCount="indefinite" path="M1200 300 L1450 300 L1500 350 L1750 350 L1800 300 L1970 300"/>
-                        </circle>
-                        <circle class="particle particle-4" r="2.5" fill="#f07a65">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" path="M1100 500 L1350 500 L1400 550 L1650 550 L1700 500 L1970 500"/>
-                        </circle>
-                    </g>
-                    
                     <!-- Small decorative elements - Nuvaro Purple -->
                     <g class="circuit-decorations" fill="none" stroke="#59377e" stroke-width="1" opacity="0.4">
                         <rect x="400" y="180" width="20" height="20" rx="2"/>
                         <rect x="420" y="180" width="20" height="20" rx="2"/>
-                        <rect x="1200" cy="380" width="15" height="15" rx="1"/>
-                        <rect x="1220" cy="380" width="15" height="15" rx="1"/>
-                        <rect x="1240" cy="380" width="15" height="15" rx="1"/>
+                        <rect x="1200" y="380" width="15" height="15" rx="1"/>
+                        <rect x="1220" y="380" width="15" height="15" rx="1"/>
+                        <rect x="1240" y="380" width="15" height="15" rx="1"/>
                         <!-- Arrow patterns -->
                         <path d="M600 180 L610 190 L600 200 M615 180 L625 190 L615 200 M630 180 L640 190 L630 200"/>
                         <path d="M1600 480 L1610 490 L1600 500 M1615 480 L1625 490 L1615 500 M1630 480 L1640 490 L1630 500"/>
@@ -195,199 +192,157 @@
             </div>
         </div>
         <div class="container hero-content">
-            <div class="row align-items-center min-vh-100">
+            <div class="row align-items-center hero-section__row">
                 <div class="col-lg-8 col-xl-7">
+                    <p class="hero-locale" data-aos="fade-up" data-aos-delay="50">
+                        <span class="hero-locale__dot" aria-hidden="true"></span>
+                        <span class="hero-locale__text">Vancouver-area studio</span>
+                    </p>
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                        End-to-End Digital Transformation from <br>
-                        <span class="gradient-text">Strategy to Execution</span><br>
+                        <span class="hero-title__line">End-to-End Digital Transformation from</span>
+                        <span class="gradient-text hero-title__accent">Strategy to Execution</span>
                     </h1>
                     <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                        From web & mobile to AI automation, DevOps, CRM, and UX — we build, scale, and optimize your digital ecosystem.
+                        From web &amp; mobile to AI automation, DevOps, CRM, and UX — we build, scale, and optimize your digital ecosystem.
                     </p>
+                    <ul class="hero-pills" data-aos="fade-up" data-aos-delay="250" aria-label="What we work on">
+                        <li>Product engineering</li>
+                        <li>AI &amp; integrations</li>
+                        <li>Cloud &amp; delivery</li>
+                    </ul>
                     <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
-                        <a href="#contact" class="btn btn-primary btn-lg">
+                        <a href="#contact" class="btn btn-primary btn-lg hero-cta__primary">
                             Schedule a Consultation
-                            <i class="bi bi-arrow-right ms-2"></i>
+                            <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
                         </a>
-                        <a href="#services" class="btn btn-outline-light btn-lg">
-                            Our Services
+                        <a href="#capabilities" class="btn btn-outline-primary btn-lg hero-cta__secondary">
+                            Capabilities
                         </a>
-                    </div>
-                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Delivered</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-number">30+</span>
-                            <span class="stat-label">Happy Clients</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <a href="#services">
+            <a href="#showcase">
                 <div class="mouse"></div>
                 <span>Scroll to explore</span>
             </a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section services-section">
-        <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">
-                    Comprehensive tech solutions tailored to accelerate your business growth
-                </p>
-            </div>
-            <div class="row g-4">
-                <!-- Service 1: Web Development -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card color-cyan">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-code-slash"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Custom websites and web applications tailored to your business needs.</p>
-                        <ul class="service-list">
-                            <li>Custom Web Applications</li>
-                            <li>API Development</li>
-                            <li>Full-Stack Solutions</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 2: Mobile Applications -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
-                    <div class="service-card color-orange">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-phone"></i>
-                        </div>
-                        <h3>Mobile Applications</h3>
-                        <p>Cross-platform and native mobile apps for iOS and Android.</p>
-                        <ul class="service-list">
-                            <li>iOS & Android Development</li>
-                            <li>Cross-Platform Solutions</li>
-                            <li>App Store Optimization</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 3: E-Commerce Solutions -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card color-purple">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-cart4"></i>
-                        </div>
-                        <h3>E-Commerce Solutions</h3>
-                        <p>Complete online store solutions to power your digital commerce.</p>
-                        <ul class="service-list">
-                            <li>Shopify & WooCommerce</li>
-                            <li>Custom Storefronts</li>
-                            <li>Payment Integrations</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 4: CRM Management -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
-                    <div class="service-card color-green">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h3>CRM Management</h3>
-                        <p>Streamline customer relationships with tailored CRM solutions.</p>
-                        <ul class="service-list">
-                            <li>HubSpot & Salesforce Setup</li>
-                            <li>Custom CRM Builds</li>
-                            <li>Workflow Automation</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 5: UX/UI Design -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card color-pink">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-palette"></i>
-                        </div>
-                        <h3>UX/UI Design</h3>
-                        <p>User-centered design that delivers exceptional digital experiences.</p>
-                        <ul class="service-list">
-                            <li>User Research & Wireframing</li>
-                            <li>Prototyping</li>
-                            <li>Design Systems</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 6: Agentic AI & Automation -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
-                    <div class="service-card color-indigo">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-robot"></i>
-                        </div>
-                        <h3>Agentic AI & Automation</h3>
-                        <p>Harness the power of AI to automate and optimize your workflows.</p>
-                        <ul class="service-list">
-                            <li>AI-Powered Workflows</li>
-                            <li>Process Automation</li>
-                            <li>LLM Integrations</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 7: DevOps & CI/CD Pipelines -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card color-yellow">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-gear-wide-connected"></i>
-                        </div>
-                        <h3>DevOps & CI/CD</h3>
-                        <p>Streamline deployments with modern DevOps practices and cloud infrastructure.</p>
-                        <ul class="service-list">
-                            <li>GitHub Actions & Docker</li>
-                            <li>Kubernetes</li>
-                            <li>AWS / GCP / Azure</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 8: QA & Testing -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="450">
-                    <div class="service-card color-red">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-bug"></i>
-                        </div>
-                        <h3>QA & Testing</h3>
-                        <p>Ensure quality and reliability with comprehensive testing strategies.</p>
-                        <ul class="service-list">
-                            <li>Automated Testing</li>
-                            <li>Performance Testing</li>
-                            <li>Accessibility Audits</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 9: Corporate Trainings -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-card color-teal">
-                        <div class="service-icon-wrapper">
-                            <i class="bi bi-mortarboard"></i>
-                        </div>
-                        <h3>Corporate Trainings</h3>
-                        <p>Technical workshops and training programs to upskill your teams.</p>
-                        <ul class="service-list">
-                            <li>Technical Workshops</li>
-                            <li>Team Skill Development</li>
-                            <li>Custom Training Programs</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <!-- KidsHub showcase -->
+    <section id="showcase" class="nv-showcase" aria-labelledby="showcase-title">
+      <div class="nv-showcase__head nv-container">
+        <div class="nv-label nv-reveal">KidsHub</div>
+        <h2 id="showcase-title" class="nv-showcase__title nv-reveal nv-reveal--delay-1">
+          A vertical SaaS for daycare operators, built end-to-end.
+        </h2>
+        <p class="nv-showcase__sub nv-reveal nv-reveal--delay-2">
+          From product strategy to AI integration to deployment. Live at <a href="https://getkidshub.com" target="_blank" rel="noopener noreferrer">getkidshub.com</a>.
+        </p>
+      </div>
+
+      <div class="nv-ss">
+        <div class="nv-ss__col nv-ss__col--left">
+          <div class="nv-ss__phone nv-reveal">
+            <img src="images/kidshub/kidshub-login.png" alt="KidsHub parent portal sign-in" width="400" height="860" loading="lazy" decoding="async">
+          </div>
+          <div class="nv-ss__phone nv-reveal nv-reveal--delay-1">
+            <img src="images/kidshub/kidshub-parent-home.png" alt="KidsHub parent home" width="400" height="860" loading="lazy" decoding="async">
+          </div>
         </div>
+        <div class="nv-ss__center nv-reveal nv-reveal--delay-2">
+          <div class="nv-ss__desktop">
+            <img src="images/kidshub/kidshub-dashboard.png" alt="KidsHub operator dashboard" width="1600" height="900" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="nv-ss__col nv-ss__col--right">
+          <div class="nv-ss__phone nv-reveal nv-reveal--delay-2">
+            <img src="images/kidshub/kidshub-photos.png" alt="KidsHub daily photos for parents" width="400" height="860" loading="lazy" decoding="async">
+          </div>
+          <div class="nv-ss__phone nv-reveal nv-reveal--delay-3">
+            <img src="images/kidshub/kidshub-owner.png" alt="KidsHub owner portal" width="400" height="860" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we do -->
+    <section id="capabilities" class="nv-cap" aria-labelledby="cap-heading">
+      <div class="nv-cap__mesh" aria-hidden="true">
+        <div class="nv-cap__orb nv-cap__orb--a"></div>
+        <div class="nv-cap__orb nv-cap__orb--b"></div>
+      </div>
+      <div class="nv-container nv-cap__content">
+        <div class="nv-label nv-reveal">What we do</div>
+        <h2 id="cap-heading" class="nv-showcase__title nv-reveal nv-reveal--delay-1" style="margin-bottom: 28px;">
+          Capabilities we deploy on real products.
+        </h2>
+
+        <div class="nv-cap__grid">
+          <article class="nv-cap__cell nv-reveal">
+            <div class="nv-cap__viz" aria-hidden="true">
+              <svg class="nv-cap__svg" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="nv-cap-draw-line" d="M24 88 L96 40 L160 72 L224 32 L296 64" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle class="nv-cap-glow-dot" cx="96" cy="40" r="5" fill="#4B2E91"/><circle class="nv-cap-glow-dot nv-cap-glow-dot--d1" cx="160" cy="72" r="5" fill="#A33BC4"/><circle class="nv-cap-glow-dot nv-cap-glow-dot--d2" cx="224" cy="32" r="5" fill="#D94B8C"/>
+                <rect x="20" y="92" width="72" height="14" rx="3" fill="#0A0A0F" opacity="0.06"/>
+                <rect x="124" y="92" width="72" height="14" rx="3" fill="#0A0A0F" opacity="0.06"/>
+                <defs><linearGradient id="g1" x1="24" y1="88" x2="296" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4B2E91"/><stop offset="0.5" stop-color="#A33BC4"/><stop offset="1" stop-color="#F26B4F"/>
+                </linearGradient></defs>
+              </svg>
+            </div>
+            <div class="nv-cap__n">01</div>
+            <h3 class="nv-cap__title">Product strategy</h3>
+            <p class="nv-cap__desc">Scope, architecture bets, and what not to build — before engineering starts burning sprint budget.</p>
+          </article>
+
+          <article class="nv-cap__cell nv-reveal nv-reveal--delay-1">
+            <div class="nv-cap__viz" aria-hidden="true">
+              <svg class="nv-cap__svg" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect class="nv-cap-stack-base" x="48" y="68" width="224" height="22" rx="4" stroke="#0A0A0F" stroke-opacity="0.22" fill="none"/>
+                <rect class="nv-cap-stack-mid" x="48" y="42" width="224" height="18" rx="4" fill="#3a2468" fill-opacity="0.35" stroke="#2d1b52" stroke-opacity="0.85"/>
+                <rect class="nv-cap-stack-top" x="48" y="18" width="160" height="16" rx="4" fill="#5c2d86" fill-opacity="0.32" stroke="#4a1f6e" stroke-opacity="0.75"/>
+                <path class="nv-cap-spark" d="M254 26 L268 26 L268 40 L254 40 Z" fill="#d94830"/>
+              </svg>
+            </div>
+            <div class="nv-cap__n">02</div>
+            <h3 class="nv-cap__title">Full-stack engineering</h3>
+            <p class="nv-cap__desc">Web, mobile, and backend built to ship — sensible defaults, observable systems, code you can inherit.</p>
+          </article>
+
+          <article class="nv-cap__cell nv-reveal nv-reveal--delay-2">
+            <div class="nv-cap__viz" aria-hidden="true">
+              <svg class="nv-cap__svg" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="nv-cap-node" cx="80" cy="56" r="18" fill="none" stroke="#4B2E91" stroke-width="2.5"/><circle class="nv-cap-node nv-cap-node--2" cx="160" cy="56" r="18" fill="none" stroke="#A33BC4" stroke-width="2.5"/><circle class="nv-cap-node nv-cap-node--3" cx="240" cy="56" r="18" fill="none" stroke="#D94B8C" stroke-width="2.5"/>
+                <path class="nv-cap-ai-link" d="M98 56 H142 M178 56 H222" stroke="#0A0A0F" stroke-opacity="0.22" stroke-width="2"/>
+                <path class="nv-cap-ai-stem" d="M160 74 L160 92" stroke="url(#g2)" stroke-width="2.5"/>
+                <rect class="nv-cap-ai-base" x="132" y="92" width="56" height="14" rx="3" fill="#0A0A0F" fill-opacity="0.1"/>
+                <defs><linearGradient id="g2" x1="160" y1="74" x2="160" y2="92"><stop stop-color="#A33BC4"/><stop offset="1" stop-color="#F26B4F"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="nv-cap__n">03</div>
+            <h3 class="nv-cap__title">AI integration</h3>
+            <p class="nv-cap__desc">Features that solve measurable problems — routing, drafting, classification — not generic chat bolt-ons.</p>
+          </article>
+
+          <article class="nv-cap__cell nv-reveal nv-reveal--delay-3">
+            <div class="nv-cap__viz" aria-hidden="true">
+              <svg class="nv-cap__svg" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect class="nv-cap-pipe" x="32" y="52" width="52" height="28" rx="4" stroke="#0A0A0F" stroke-opacity="0.18"/>
+                <path class="nv-cap-flow" d="M84 66 H116" stroke="#A33BC4" stroke-width="2"/>
+                <rect class="nv-cap-pipe nv-cap-pipe--mid" x="116" y="52" width="52" height="28" rx="4" stroke="#4B2E91" stroke-width="2"/>
+                <path class="nv-cap-flow nv-cap-flow--2" d="M168 66 H200" stroke="#A33BC4" stroke-width="2"/>
+                <rect class="nv-cap-pipe" x="200" y="52" width="52" height="28" rx="4" stroke="#D94B8C" stroke-width="2"/>
+                <path class="nv-cap-flow-out" d="M252 66 L276 66" stroke="#F26B4F" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="nv-cap__n">04</div>
+            <h3 class="nv-cap__title">Deployment</h3>
+            <p class="nv-cap__desc">CI/CD, environments, monitoring — the path from merge to first real users without heroics.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
@@ -465,129 +420,91 @@
     </section>
 
     <!-- Process Section -->
-    <section class="section process-section">
+    <section class="section process-section process-section--revamp" aria-labelledby="process-heading">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center process-section__intro" data-aos="fade-up">
                 <span class="section-tag">Our Approach</span>
-                <h2 class="section-title">How We Work</h2>
+                <h2 id="process-heading" class="section-title">How We Work</h2>
                 <p class="section-subtitle">
                     A proven methodology that ensures project success from start to finish
                 </p>
             </div>
-            <div class="process-steps">
-                <div class="row g-4">
-                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="process-step-card color-cyan">
-                            <div class="step-number">01</div>
-                            <div class="step-icon-wrapper">
-                                <i class="bi bi-search"></i>
-                            </div>
-                            <h4>Discover</h4>
-                            <p>Understanding your business goals, requirements, and challenges through in-depth research and analysis.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="process-step-card color-purple">
-                            <div class="step-number">02</div>
-                            <div class="step-icon-wrapper">
-                                <i class="bi bi-pencil-square"></i>
-                            </div>
-                            <h4>Plan</h4>
-                            <p>Creating detailed roadmaps and strategic solutions tailored to your specific needs.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="process-step-card color-orange">
-                            <div class="step-number">03</div>
-                            <div class="step-icon-wrapper">
-                                <i class="bi bi-code-square"></i>
-                            </div>
-                            <h4>Build</h4>
-                            <p>Developing with best practices and cutting-edge technologies for optimal performance.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="process-step-card color-green">
-                            <div class="step-number">04</div>
-                            <div class="step-icon-wrapper">
-                                <i class="bi bi-rocket-takeoff"></i>
-                            </div>
-                            <h4>Launch</h4>
-                            <p>Deploying your solution with thorough testing and optimization for success.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg col-md-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="process-step-card color-pink">
-                            <div class="step-number">05</div>
-                            <div class="step-icon-wrapper">
-                                <i class="bi bi-headset"></i>
-                            </div>
-                            <h4>Support</h4>
-                            <p>Ongoing maintenance, updates, and dedicated support to ensure continued success.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Industries We Serve Section -->
-    <section id="industries" class="section industries-section">
-        <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-tag">Who We Help</span>
-                <h2 class="section-title">Industries We Serve</h2>
-                <p class="section-subtitle">
-                    We deliver tailored solutions across diverse sectors
+            <div class="process-rail" data-process-rail style="--progress: 0" role="group" aria-labelledby="process-heading" data-aos="fade-up" data-aos-delay="80">
+                <p class="process-rail__hint">
+                    <i class="bi bi-hand-index" aria-hidden="true"></i>
+                    <span class="d-md-none">Tap a step to move along the journey.</span>
+                    <span class="d-none d-md-inline">Select a step — the bar shows where you are in the journey.</span>
                 </p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="industry-card color-cyan">
-                        <div class="industry-icon">
-                            <i class="bi bi-cart3"></i>
-                        </div>
-                        <h5>Retail</h5>
-                    </div>
+                <div class="process-rail__line" aria-hidden="true">
+                    <span class="process-rail__line-track"></span>
+                    <span class="process-rail__line-fill"></span>
                 </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150">
-                    <div class="industry-card color-pink">
-                        <div class="industry-icon">
-                            <i class="bi bi-heart-pulse"></i>
-                        </div>
-                        <h5>Healthcare</h5>
+                <div class="process-rail__track row g-3 g-xl-4">
+                    <div class="col-12 col-md-6 col-xl">
+                        <article class="process-step-card process-step-card--bold color-cyan is-active" data-step="0" tabindex="0" aria-current="step" aria-label="Step 1 of 5: Discover">
+                            <span class="process-step-card__glow" aria-hidden="true"></span>
+                            <div class="process-step-card__mark">
+                                <div class="step-visual">
+                                    <span class="step-visual__num">01</span>
+                                    <span class="step-visual__icon"><i class="bi bi-search" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <h3 class="process-step-card__title">Discover</h3>
+                            <p>Understanding your business goals, requirements, and challenges through in-depth research and analysis.</p>
+                        </article>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="industry-card color-green">
-                        <div class="industry-icon">
-                            <i class="bi bi-bank2"></i>
-                        </div>
-                        <h5>Finance</h5>
+                    <div class="col-12 col-md-6 col-xl">
+                        <article class="process-step-card process-step-card--bold color-purple" data-step="1" tabindex="0" aria-label="Step 2 of 5: Plan">
+                            <span class="process-step-card__glow" aria-hidden="true"></span>
+                            <div class="process-step-card__mark">
+                                <div class="step-visual">
+                                    <span class="step-visual__num">02</span>
+                                    <span class="step-visual__icon"><i class="bi bi-pencil-square" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <h3 class="process-step-card__title">Plan</h3>
+                            <p>Creating detailed roadmaps and strategic solutions tailored to your specific needs.</p>
+                        </article>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250">
-                    <div class="industry-card color-orange">
-                        <div class="industry-icon">
-                            <i class="bi bi-rocket-takeoff"></i>
-                        </div>
-                        <h5>Startups</h5>
+                    <div class="col-12 col-md-6 col-xl">
+                        <article class="process-step-card process-step-card--bold color-orange" data-step="2" tabindex="0" aria-label="Step 3 of 5: Build">
+                            <span class="process-step-card__glow" aria-hidden="true"></span>
+                            <div class="process-step-card__mark">
+                                <div class="step-visual">
+                                    <span class="step-visual__num">03</span>
+                                    <span class="step-visual__icon"><i class="bi bi-code-square" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <h3 class="process-step-card__title">Build</h3>
+                            <p>Developing with best practices and cutting-edge technologies for optimal performance.</p>
+                        </article>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="industry-card color-purple">
-                        <div class="industry-icon">
-                            <i class="bi bi-mortarboard"></i>
-                        </div>
-                        <h5>Education</h5>
+                    <div class="col-12 col-md-6 col-xl">
+                        <article class="process-step-card process-step-card--bold color-green" data-step="3" tabindex="0" aria-label="Step 4 of 5: Launch">
+                            <span class="process-step-card__glow" aria-hidden="true"></span>
+                            <div class="process-step-card__mark">
+                                <div class="step-visual">
+                                    <span class="step-visual__num">04</span>
+                                    <span class="step-visual__icon"><i class="bi bi-rocket-takeoff" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <h3 class="process-step-card__title">Launch</h3>
+                            <p>Deploying your solution with thorough testing and optimization for success.</p>
+                        </article>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="350">
-                    <div class="industry-card color-indigo">
-                        <div class="industry-icon">
-                            <i class="bi bi-building"></i>
-                        </div>
-                        <h5>Enterprise</h5>
+                    <div class="col-12 col-md-6 col-xl process-rail__last">
+                        <article class="process-step-card process-step-card--bold color-pink" data-step="4" tabindex="0" aria-label="Step 5 of 5: Support">
+                            <span class="process-step-card__glow" aria-hidden="true"></span>
+                            <div class="process-step-card__mark">
+                                <div class="step-visual">
+                                    <span class="step-visual__num">05</span>
+                                    <span class="step-visual__icon"><i class="bi bi-headset" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                            <h3 class="process-step-card__title">Support</h3>
+                            <p>Ongoing maintenance, updates, and dedicated support to ensure continued success.</p>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -595,96 +512,108 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section class="section tech-stack-section">
+    <section id="toolkit" class="section tech-stack-section tech-stack-section--revamp" aria-labelledby="tech-stack-heading">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center tech-stack-section__intro" data-aos="fade-up">
                 <span class="section-tag">Our Toolkit</span>
-                <h2 class="section-title">Tech Stack & Tools</h2>
+                <h2 id="tech-stack-heading" class="section-title">Tech Stack & Tools</h2>
                 <p class="section-subtitle">
                     Modern technologies we use to build exceptional products
                 </p>
             </div>
-            <div class="tech-grid" data-aos="fade-up" data-aos-delay="100">
-                <div class="tech-category color-cyan">
-                    <h4>Frontend</h4>
+            <div class="tech-grid tech-grid--revamp" data-aos="fade-up" data-aos-delay="100">
+                <div class="tech-category tech-category--revamp color-cyan">
+                    <div class="tech-category__head">
+                        <h3 class="tech-category__title">Frontend</h3>
+                        <p class="tech-category__blurb">Interfaces &amp; client delivery</p>
+                    </div>
                     <div class="tech-logos">
                         <div class="tech-item" title="React">
-                            <i class="bi bi-filetype-jsx"></i>
+                            <i class="bi bi-filetype-jsx" aria-hidden="true"></i>
                             <span>React</span>
                         </div>
                         <div class="tech-item" title="Angular">
-                            <i class="bi bi-diamond"></i>
+                            <i class="bi bi-diamond" aria-hidden="true"></i>
                             <span>Angular</span>
                         </div>
                         <div class="tech-item" title="Vue.js">
-                            <i class="bi bi-box"></i>
+                            <i class="bi bi-box" aria-hidden="true"></i>
                             <span>Vue.js</span>
                         </div>
                         <div class="tech-item" title="Next.js">
-                            <i class="bi bi-arrow-right-square"></i>
+                            <i class="bi bi-arrow-right-square" aria-hidden="true"></i>
                             <span>Next.js</span>
                         </div>
                     </div>
                 </div>
-                <div class="tech-category color-green">
-                    <h4>Backend</h4>
+                <div class="tech-category tech-category--revamp color-green">
+                    <div class="tech-category__head">
+                        <h3 class="tech-category__title">Backend</h3>
+                        <p class="tech-category__blurb">APIs, services &amp; data</p>
+                    </div>
                     <div class="tech-logos">
                         <div class="tech-item" title="Node.js">
-                            <i class="bi bi-hexagon"></i>
+                            <i class="bi bi-hexagon" aria-hidden="true"></i>
                             <span>Node.js</span>
                         </div>
                         <div class="tech-item" title="Python">
-                            <i class="bi bi-filetype-py"></i>
+                            <i class="bi bi-filetype-py" aria-hidden="true"></i>
                             <span>Python</span>
                         </div>
                         <div class="tech-item" title=".NET">
-                            <i class="bi bi-microsoft"></i>
+                            <i class="bi bi-microsoft" aria-hidden="true"></i>
                             <span>.NET</span>
                         </div>
                         <div class="tech-item" title="Java">
-                            <i class="bi bi-cup-hot"></i>
+                            <i class="bi bi-cup-hot" aria-hidden="true"></i>
                             <span>Java</span>
                         </div>
                     </div>
                 </div>
-                <div class="tech-category color-orange">
-                    <h4>Cloud & DevOps</h4>
+                <div class="tech-category tech-category--revamp color-orange">
+                    <div class="tech-category__head">
+                        <h3 class="tech-category__title">Cloud &amp; DevOps</h3>
+                        <p class="tech-category__blurb">Ship, scale &amp; observe</p>
+                    </div>
                     <div class="tech-logos">
                         <div class="tech-item" title="AWS">
-                            <i class="bi bi-cloud"></i>
+                            <i class="bi bi-cloud" aria-hidden="true"></i>
                             <span>AWS</span>
                         </div>
                         <div class="tech-item" title="GCP">
-                            <i class="bi bi-google"></i>
+                            <i class="bi bi-google" aria-hidden="true"></i>
                             <span>GCP</span>
                         </div>
                         <div class="tech-item" title="Docker">
-                            <i class="bi bi-box-seam"></i>
+                            <i class="bi bi-box-seam" aria-hidden="true"></i>
                             <span>Docker</span>
                         </div>
                         <div class="tech-item" title="Kubernetes">
-                            <i class="bi bi-diagram-3"></i>
+                            <i class="bi bi-diagram-3" aria-hidden="true"></i>
                             <span>K8s</span>
                         </div>
                     </div>
                 </div>
-                <div class="tech-category color-purple">
-                    <h4>Tools & Platforms</h4>
+                <div class="tech-category tech-category--revamp color-purple">
+                    <div class="tech-category__head">
+                        <h3 class="tech-category__title">Tools &amp; Platforms</h3>
+                        <p class="tech-category__blurb">Design, commerce &amp; workflow</p>
+                    </div>
                     <div class="tech-logos">
                         <div class="tech-item" title="Shopify">
-                            <i class="bi bi-bag"></i>
+                            <i class="bi bi-bag" aria-hidden="true"></i>
                             <span>Shopify</span>
                         </div>
                         <div class="tech-item" title="HubSpot">
-                            <i class="bi bi-bullseye"></i>
+                            <i class="bi bi-bullseye" aria-hidden="true"></i>
                             <span>HubSpot</span>
                         </div>
                         <div class="tech-item" title="Figma">
-                            <i class="bi bi-vector-pen"></i>
+                            <i class="bi bi-vector-pen" aria-hidden="true"></i>
                             <span>Figma</span>
                         </div>
                         <div class="tech-item" title="GitHub">
-                            <i class="bi bi-github"></i>
+                            <i class="bi bi-github" aria-hidden="true"></i>
                             <span>GitHub</span>
                         </div>
                     </div>
@@ -693,103 +622,27 @@
         </div>
     </section>
 
-    <!-- Case Studies Section -->
-    <section id="portfolio" class="section case-studies-section">
-        <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-tag">Our Work</span>
-                <h2 class="section-title">Case Studies</h2>
-                <p class="section-subtitle">
-                    Real projects with measurable outcomes
-                </p>
-            </div>
-            <div class="row g-4">
-                <!-- Case Study 1 -->
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="case-study-card color-cyan">
-                        <div class="case-study-header">
-                            <span class="case-category">E-Commerce</span>
-                            <h3>Multi-vendor Marketplace</h3>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-phase">
-                                <span class="phase-label">Problem</span>
-                                <p>A retail client needed a scalable marketplace to onboard 500+ vendors with real-time inventory sync.</p>
-                            </div>
-                            <div class="case-phase">
-                                <span class="phase-label">Solution</span>
-                                <p>Built a custom Shopify Plus integration with automated vendor onboarding and inventory management.</p>
-                            </div>
-                            <div class="case-phase">
-                                <span class="phase-label">Outcome</span>
-                                <p class="outcome-highlight"><strong>200% increase</strong> in online sales, <strong>85% reduction</strong> in manual processing time.</p>
-                            </div>
-                        </div>
-                        <div class="case-tech-stack">
-                            <span>Shopify Plus</span>
-                            <span>Node.js</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case Study 2 -->
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="case-study-card color-green">
-                        <div class="case-study-header">
-                            <span class="case-category">Healthcare</span>
-                            <h3>Patient Management System</h3>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-phase">
-                                <span class="phase-label">Problem</span>
-                                <p>A healthcare provider struggled with fragmented patient data across multiple legacy systems.</p>
-                            </div>
-                            <div class="case-phase">
-                                <span class="phase-label">Solution</span>
-                                <p>Developed a unified platform with HIPAA-compliant data migration and real-time appointment scheduling.</p>
-                            </div>
-                            <div class="case-phase">
-                                <span class="phase-label">Outcome</span>
-                                <p class="outcome-highlight"><strong>60% faster</strong> patient check-ins, <strong>40% reduction</strong> in no-show rates.</p>
-                            </div>
-                        </div>
-                        <div class="case-tech-stack">
-                            <span>React</span>
-                            <span>.NET</span>
-                            <span>Azure</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case Study 3 -->
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="case-study-card color-purple">
-                        <div class="case-study-header">
-                            <span class="case-category">FinTech</span>
-                            <h3>AI-Powered Analytics Dashboard</h3>
-                        </div>
-                        <div class="case-study-content">
-                            <div class="case-phase">
-                                <span class="phase-label">Problem</span>
-                                <p>A fintech startup needed real-time fraud detection and predictive analytics for their payment platform.</p>
-                            </div>
-                            <div class="case-phase">
-                                <span class="phase-label">Solution</span>
-                                <p>Implemented ML models with custom dashboards for real-time monitoring and automated alert systems.</p>
-                            </div>
-                            <div class="case-phase">
-                                <span class="phase-label">Outcome</span>
-                                <p class="outcome-highlight"><strong>95% fraud detection</strong> accuracy, <strong>$2M+ saved</strong> in prevented losses.</p>
-                            </div>
-                        </div>
-                        <div class="case-tech-stack">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>AWS</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Aria -->
+    <section id="aria" class="nv-aria" aria-labelledby="aria-heading">
+      <div class="nv-container">
+        <div class="nv-aria__inner">
+          <div>
+            <div class="nv-label nv-reveal">AI integration</div>
+            <h2 id="aria-heading" class="nv-aria__heading nv-reveal nv-reveal--delay-1">
+              Aria — AI integration as a Nuvaro capability
+            </h2>
+            <p class="nv-aria__desc nv-reveal nv-reveal--delay-2">
+              We ship assistants and workflows against real constraints — like Aria on the KidsHub marketing site for lead qualification and product questions. Production-deployed, not slideware. Open the chat bubble to try the same stack we integrate for clients.
+            </p>
+            <p class="nv-aria__hint nv-reveal nv-reveal--delay-3">
+              <kbd aria-hidden="true">Tip</kbd> Use the chat control in the lower corner — same assistant pattern we deploy on client properties.
+            </p>
+          </div>
+          <div class="nv-aria__visual nv-reveal nv-reveal--delay-2">
+            <img src="images/kidshub/kidshub-aria-marketing.png" alt="KidsHub marketing site with Aria assistant" width="900" height="5544" loading="lazy" decoding="async">
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Why Nuvaro Section -->
@@ -802,11 +655,11 @@
                     The right partner makes all the difference
                 </p>
             </div>
-            <div class="row g-4 align-items-center">
+            <div class="row g-4 g-lg-5 align-items-start why-revamp">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="why-content">
                         <div class="why-item color-cyan">
-                            <div class="why-icon">
+                            <div class="why-icon why-icon--float" aria-hidden="true">
                                 <i class="bi bi-person-check"></i>
                             </div>
                             <div class="why-text">
@@ -815,7 +668,7 @@
                             </div>
                         </div>
                         <div class="why-item color-orange">
-                            <div class="why-icon">
+                            <div class="why-icon why-icon--pulse" aria-hidden="true">
                                 <i class="bi bi-speedometer2"></i>
                             </div>
                             <div class="why-text">
@@ -824,7 +677,7 @@
                             </div>
                         </div>
                         <div class="why-item color-green">
-                            <div class="why-icon">
+                            <div class="why-icon why-icon--rise" aria-hidden="true">
                                 <i class="bi bi-graph-up-arrow"></i>
                             </div>
                             <div class="why-text">
@@ -833,7 +686,7 @@
                             </div>
                         </div>
                         <div class="why-item color-purple">
-                            <div class="why-icon">
+                            <div class="why-icon why-icon--steady" aria-hidden="true">
                                 <i class="bi bi-shield-check"></i>
                             </div>
                             <div class="why-text">
@@ -843,46 +696,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="comparison-table">
-                        <div class="comparison-header">
-                            <div class="comparison-col"></div>
-                            <div class="comparison-col">Freelancers</div>
-                            <div class="comparison-col">Large Agencies</div>
-                            <div class="comparison-col highlight">Nuvaro</div>
+                <aside class="col-lg-6" data-aos="fade-left" aria-labelledby="why-engage-heading">
+                    <div class="why-engage">
+                        <h3 id="why-engage-heading" class="why-engage-title">How we show up differently</h3>
+                        <p class="why-engage-lead">Tap a topic — no matrix, just what matters when you’re choosing a build partner.</p>
+                        <div class="why-acc-stack">
+                            <details class="why-acc" open>
+                                <summary>
+                                    <span class="why-acc-title">Direct communication</span>
+                                    <span class="why-acc-meta"><i class="bi bi-chat-dots" aria-hidden="true"></i></span>
+                                </summary>
+                                <div class="why-acc-body">
+                                    <p>You work with the people writing and shipping code — fast feedback, fewer handoffs. That’s hard to sustain with rotating freelancers or account-manager chains.</p>
+                                </div>
+                            </details>
+                            <details class="why-acc">
+                                <summary>
+                                    <span class="why-acc-title">Full team depth</span>
+                                    <span class="why-acc-meta"><i class="bi bi-people" aria-hidden="true"></i></span>
+                                </summary>
+                                <div class="why-acc-body">
+                                    <p>Product, frontend, backend, and release discipline in one small team — without the overhead of a giant agency roster or the gaps of a solo contractor.</p>
+                                </div>
+                            </details>
+                            <details class="why-acc">
+                                <summary>
+                                    <span class="why-acc-title">Cost &amp; focus</span>
+                                    <span class="why-acc-meta"><i class="bi bi-piggy-bank" aria-hidden="true"></i></span>
+                                </summary>
+                                <div class="why-acc-body">
+                                    <p>Lean structure means budget goes into delivery, not layers. You get senior attention where it moves the product — not where it fills a deck.</p>
+                                </div>
+                            </details>
+                            <details class="why-acc">
+                                <summary>
+                                    <span class="why-acc-title">Scalable delivery</span>
+                                    <span class="why-acc-meta"><i class="bi bi-layers" aria-hidden="true"></i></span>
+                                </summary>
+                                <div class="why-acc-body">
+                                    <p>Architecture and process that can grow with you — from first release to hardening, without a ground-up rewrite every time the roadmap shifts.</p>
+                                </div>
+                            </details>
+                            <details class="why-acc">
+                                <summary>
+                                    <span class="why-acc-title">Long-term support</span>
+                                    <span class="why-acc-meta"><i class="bi bi-life-preserver" aria-hidden="true"></i></span>
+                                </summary>
+                                <div class="why-acc-body">
+                                    <p>We’re built for relationships that extend past launch — monitoring, iteration, and honest guidance when trade-offs show up in production.</p>
+                                </div>
+                            </details>
                         </div>
-                        <div class="comparison-row">
-                            <div class="comparison-col label">Direct Communication</div>
-                            <div class="comparison-col"><i class="bi bi-check-lg text-success"></i></div>
-                            <div class="comparison-col"><i class="bi bi-x-lg text-danger"></i></div>
-                            <div class="comparison-col highlight"><i class="bi bi-check-lg text-success"></i></div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="comparison-col label">Full Team Capabilities</div>
-                            <div class="comparison-col"><i class="bi bi-x-lg text-danger"></i></div>
-                            <div class="comparison-col"><i class="bi bi-check-lg text-success"></i></div>
-                            <div class="comparison-col highlight"><i class="bi bi-check-lg text-success"></i></div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="comparison-col label">Cost-Effective</div>
-                            <div class="comparison-col"><i class="bi bi-check-lg text-success"></i></div>
-                            <div class="comparison-col"><i class="bi bi-x-lg text-danger"></i></div>
-                            <div class="comparison-col highlight"><i class="bi bi-check-lg text-success"></i></div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="comparison-col label">Scalable Solutions</div>
-                            <div class="comparison-col"><i class="bi bi-x-lg text-danger"></i></div>
-                            <div class="comparison-col"><i class="bi bi-check-lg text-success"></i></div>
-                            <div class="comparison-col highlight"><i class="bi bi-check-lg text-success"></i></div>
-                        </div>
-                        <div class="comparison-row">
-                            <div class="comparison-col label">Long-term Support</div>
-                            <div class="comparison-col"><i class="bi bi-dash text-muted"></i></div>
-                            <div class="comparison-col"><i class="bi bi-check-lg text-success"></i></div>
-                            <div class="comparison-col highlight"><i class="bi bi-check-lg text-success"></i></div>
-                        </div>
+                        <a href="#contact" class="why-engage-cta">Talk through your build <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
                     </div>
-                </div>
+                </aside>
             </div>
         </div>
     </section>
@@ -893,7 +760,7 @@
             <div class="row g-5">
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="contact-info">
-                        <span class="section-tag">Get in Touch</span>
+                        <span class="section-tag">Contact</span>
                         <h2 class="section-title">Let's Build Something Great Together</h2>
                         <p class="contact-description">
                             Ready to start your next project? Contact us today and let's discuss 
@@ -984,7 +851,7 @@
                 <div class="row g-4">
                     <div class="col-lg-4">
                         <div class="footer-brand">
-                            <a href="#" class="footer-logo-link">
+                            <a href="#home" class="footer-logo-link">
                                 <img src="images/logo.svg" height="50" alt="Nuvaro" class="footer-logo">
                             </a>
                             <p>
@@ -1001,25 +868,23 @@
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <div class="footer-links">
-                            <h5>Quick Links</h5>
+                            <h5>Menu</h5>
                             <ul>
                                 <li><a href="#home">Home</a></li>
-                                <li><a href="#services">Services</a></li>
-                                <li><a href="#about">About Us</a></li>
-                                <li><a href="#portfolio">Portfolio</a></li>
+                                <li><a href="#showcase">Work</a></li>
+                                <li><a href="#capabilities">Capabilities</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#aria">Aria</a></li>
                                 <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4">
                         <div class="footer-links">
-                            <h5>Services</h5>
+                            <h5>Work</h5>
                             <ul>
-                                <li><a href="#services">Web Development</a></li>
-                                <li><a href="#services">Mobile Applications</a></li>
-                                <li><a href="#services">E-Commerce Solutions</a></li>
-                                <li><a href="#services">Agentic AI & Automation</a></li>
-                                <li><a href="#services">DevOps & CI/CD</a></li>
+                                <li><a href="#showcase">KidsHub</a></li>
+                                <li><a href="https://getkidshub.com" target="_blank" rel="noopener noreferrer">getkidshub.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1072,7 +937,6 @@
     
     <!-- Custom JS (Minified for Production) -->
     <script src="logic/script.min.js"></script>
-    <link rel="stylesheet" href="styles/aria-widget.css">
-    <script src="logic/aria-widget.js"></script>
+    <script src="logic/aria-widget.min.js"></script>
 </body>
 </html>
